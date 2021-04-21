@@ -1,77 +1,77 @@
 <html>
 
-<head>
+    <head>
 
-</head>
+    </head>
 
-<body>
-    <style>
-        .container {
-            position: relative;
-            height: 90%;
-        }
+    <body>
+        <style>
+            .container {
+                position: relative;
+                height: 90%;
+            }
 
-        .container img {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            opacity: 0;
-            transition: 1s;
-        }
+            .container img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                opacity: 0;
+                transition: 1s;
+            }
 
-        .bullets {
-            text-align: center;
-            position: relative;
-        }
+            .bullets {
+                text-align: center;
+                position: relative;
+            }
 
-        .bullet-single {
-            margin: 0 8px;
-            cursor: pointer;
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border-radius: 10px;
-            background-color: rgb(101, 5, 255);
-        }
+            .bullet-single {
+                margin: 0 8px;
+                cursor: pointer;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border-radius: 10px;
+                background-color: rgb(101, 5, 255);
+            }
 
-        .active-bullet {
-            background-color: rgb(36, 4, 124);
-        }
-    </style>
+            .active-bullet {
+                background-color: rgb(36, 4, 124);
+            }
+        </style>
 
-    <div class="container">
-        <img style="opacity: 1;" src="https://loremflickr.com/320/240" />
-        <img src="https://loremflickr.com/320/240/dog" />
-        <img src="https://loremflickr.com/320/240/bird" />
+        <div class="container">
+            <img style="opacity: 1;" src="https://loremflickr.com/320/240" />
+            <img src="https://loremflickr.com/320/240/dog" />
+            <img src="https://loremflickr.com/320/240/bird" />
 
-    </div>
+        </div>
 
-    <div class="bullets">
-        <div class="bullet-single active-bullet"></div>
-        <div class="bullet-single"></div>
-        <div class="bullet-single"></div>
-    </div>
+        <div class="bullets">
+            <div class="bullet-single active-bullet"></div>
+            <div class="bullet-single"></div>
+            <div class="bullet-single"></div>
+        </div>
 
-    <script>
-        var lastIndex = 0;
-        var images = document.querySelectorAll('.container img');
-        images.forEach((item, index) => {
-            document.querySelectorAll('.bullet-single')[index]
-                .addEventListener('click', () => {
-                    let lastImage = document.querySelectorAll('.container img')[lastIndex];
-                    let actualImage = document.querySelectorAll('.container img')[index];
+        <script>
+            var lastIndex = 0;
+            var images = document.querySelectorAll('.container img');
+            images.forEach((item, index) => {
+                document.querySelectorAll('.bullet-single')[index]
+                    .addEventListener('click', () => {
+                        let lastImage = document.querySelectorAll('.container img')[lastIndex];
+                        let actualImage = document.querySelectorAll('.container img')[index];
 
-                    document.querySelectorAll('.bullet-single')[lastIndex].classList.remove('active-bullet');
-                    document.querySelectorAll('.bullet-single')[index].classList.add('active-bullet');
+                        document.querySelectorAll('.bullet-single')[lastIndex].classList.remove('active-bullet');
+                        document.querySelectorAll('.bullet-single')[index].classList.add('active-bullet');
 
-                    lastImage.style.opacity = 0;
-                    actualImage.style.opacity = 1;
+                        lastImage.style.opacity = 0;
+                        actualImage.style.opacity = 1;
 
-                    lastIndex = index;
-                });
-        });
-    </script>
-</body>
+                        lastIndex = index;
+                    });
+            });
+        </script>
+    </body>
 
 </html>
